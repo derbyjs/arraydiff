@@ -1,6 +1,6 @@
 # arraydiff
 
-Diff two arrays, finding inserts, removes, and moves
+Diff two arrays, finding inserts, removes, and moves.
 
 [![build status](https://secure.travis-ci.org/codeparty/arraydiff.png)](http://travis-ci.org/codeparty/arraydiff)
 
