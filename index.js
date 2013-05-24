@@ -13,12 +13,26 @@ function InsertDiff(index, values) {
   this.values = values;
 }
 InsertDiff.prototype.type = 'insert';
+InsertDiff.prototype.toJSON = function() {
+  return {
+    type: this.type
+  , index: this.index
+  , values: this.values
+  };
+};
 
 function RemoveDiff(index, howMany) {
   this.index = index;
   this.howMany = howMany;
 }
 RemoveDiff.prototype.type = 'remove';
+RemoveDiff.prototype.toJSON = function() {
+  return {
+    type: this.type
+  , index: this.index
+  , howMany: this.howMany
+  };
+};
 
 function MoveDiff(from, to, howMany) {
   this.from = from;
@@ -26,6 +40,14 @@ function MoveDiff(from, to, howMany) {
   this.howMany = howMany;
 }
 MoveDiff.prototype.type = 'move';
+MoveDiff.prototype.toJSON = function() {
+  return {
+    type: this.type
+  , from: this.from
+  , to: this.to
+  , howMany: this.howMany
+  };
+};
 
 function strictEqual(a, b) {
   return a === b;
@@ -59,6 +81,7 @@ function arrayDiff(before, after, equalFn) {
         howMany++;
       } while (
         beforeIndex < beforeLength &&
+        afterIndex < afterLength &&
         equalFn(before[beforeIndex], after[afterIndex]) &&
         !afterMarked[afterIndex]
       );

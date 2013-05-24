@@ -30,11 +30,11 @@ randomArray = (maxLength = 20, maxValues = maxLength) ->
   i = randomWhole maxLength
   return (randomWhole maxValues while i--)
 
-testDiff = (before, after) ->
+testDiff = (before, after, equalFn) ->
   # console.log()
   # console.log 'before =', before
   # console.log 'after =', after
-  diff = arrayDiff before, after
+  diff = arrayDiff before, after, equalFn
   expected = applyDiff before, diff
   expect(expected).to.eql after
 
@@ -44,6 +44,12 @@ describe 'arrayDiff', ->
     testDiff [], []
     testDiff [], [0, 1, 2]
     testDiff [0, 1, 2], []
+
+  it 'supports custom equality comparisons', ->
+    before = [{id: 1}, {id: 2}]
+    after = [{id: 1}]
+    testDiff before, after, (a, b) ->
+      return a.id is b.id
 
   it 'diffs randomly rearranged arrays of numbers', ->
     i = 1000
