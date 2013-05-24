@@ -6,7 +6,7 @@
     "type": "git",
     "url": "https://github.com/codeparty/arraydiff"
   },
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "./index.js",
   "scripts": {
     "test": "grunt test"
