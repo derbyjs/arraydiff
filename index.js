@@ -60,7 +60,7 @@ function arrayDiff(before, after, equalFn) {
   // as moves. Many of these "moves" may end up being discarded in the last
   // pass if they are from an index to the same index, but we don't know this
   // up front, since we haven't yet offset the indices.
-  // 
+  //
   // Also keep a map of all the indices accounted for in the before and after
   // arrays. These maps are used next to create insert and remove diffs.
   var beforeLength = before.length;
