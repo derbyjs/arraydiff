@@ -72,7 +72,7 @@ function arrayDiff(before, after, equalFn) {
     var beforeItem = before[beforeIndex];
     for (var afterIndex = 0; afterIndex < afterLength; afterIndex++) {
       if (afterMarked[afterIndex]) continue;
-      if (!equalFn(beforeItem, after[afterIndex])) continue;
+      if (!equalFn(beforeItem, after[afterIndex], beforeIndex, afterIndex)) continue;
       var from = beforeIndex;
       var to = afterIndex;
       var howMany = 0;
@@ -82,7 +82,7 @@ function arrayDiff(before, after, equalFn) {
       } while (
         beforeIndex < beforeLength &&
         afterIndex < afterLength &&
-        equalFn(before[beforeIndex], after[afterIndex]) &&
+        equalFn(before[beforeIndex], after[afterIndex], beforeIndex, afterIndex) &&
         !afterMarked[afterIndex]
       );
       moves.push(new MoveDiff(from, to, howMany));

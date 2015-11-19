@@ -51,6 +51,14 @@ describe 'arrayDiff', ->
     testDiff before, after, (a, b) ->
       return a.id is b.id
 
+  it 'provides the item indices to the equality function', ->
+    before = [{id: 1}, {id: 2}, {id: 6}]
+    after = [{id: 1}, {id: 3}, {id: 4}, {id: 5}]
+    testDiff before, after, (a, b, aIndex, bIndex) ->
+      expect(aIndex).to.be before.indexOf(a)
+      expect(bIndex).to.be after.indexOf(b)
+      return a.id is b.id
+
   it 'diffs randomly rearranged arrays of numbers', ->
     i = 1000
     while i--
