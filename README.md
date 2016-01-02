@@ -2,7 +2,7 @@
 
 Diff two arrays, finding inserts, removes, and moves.
 
-[![build status](https://secure.travis-ci.org/codeparty/arraydiff.png)](http://travis-ci.org/codeparty/arraydiff)
+[![Build Status](https://travis-ci.org/derbyjs/arraydiff.svg?branch=master)](https://travis-ci.org/derbyjs/arraydiff)
 
 ## Installation
 
@@ -12,7 +12,7 @@ npm install arraydiff
 
 ## Usage
 
-```
+```js
 var arrayDiff = require('arraydiff');
 
 var before = [0, 1, 2, 3];
