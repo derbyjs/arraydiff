@@ -1,24 +1,29 @@
 {
   "name": "arraydiff",
   "description": "Diff two arrays, finding inserts, removes, and moves",
-  "homepage": "https://github.com/codeparty/arraydiff",
+  "homepage": "https://github.com/derbyjs/arraydiff",
   "repository": {
     "type": "git",
-    "url": "https://github.com/codeparty/arraydiff"
+    "url": "git+https://github.com/derbyjs/arraydiff.git"
   },
   "version": "0.1.1",
   "main": "./index.js",
   "scripts": {
-    "test": "grunt test"
+    "test": "mocha test.js && ./node_modules/.bin/jshint *.js"
   },
-  "dependencies": {},
-  "devDependencies": {
-    "grunt": "~0.4.1",
-    "mocha": "~1.9.0",
-    "expect.js": "~0.2.0",
-    "coffee-script": "~1.6.2",
-    "grunt-simple-mocha": "~0.4.0",
-    "grunt-contrib-jshint": "~0.4.3"
+  "dependencies": {
+    "expect.js": "^0.3.1",
+    "jshint": "^2.8.0",
+    "mocha": "^2.3.4"
   },
-  "optionalDependencies": {}
+  "devDependencies": {},
+  "optionalDependencies": {},
+  "bugs": {
+    "url": "https://github.com/derbyjs/arraydiff/issues"
+  },
+  "directories": {
+    "example": "example"
+  },
+  "author": "Nate Smith",
+  "license": "MIT"
 }
