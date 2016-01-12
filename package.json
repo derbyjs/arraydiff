@@ -11,12 +11,12 @@
   "scripts": {
     "test": "mocha test.js && ./node_modules/.bin/jshint *.js"
   },
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
     "expect.js": "^0.3.1",
     "jshint": "^2.8.0",
     "mocha": "^2.3.4"
   },
-  "devDependencies": {},
   "optionalDependencies": {},
   "bugs": {
     "url": "https://github.com/derbyjs/arraydiff/issues"
