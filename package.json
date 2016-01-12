@@ -6,7 +6,7 @@
     "type": "git",
     "url": "git+https://github.com/derbyjs/arraydiff.git"
   },
-  "version": "0.1.1",
+  "version": "0.1.2",
   "main": "./index.js",
   "scripts": {
     "test": "mocha test.js && ./node_modules/.bin/jshint *.js"
