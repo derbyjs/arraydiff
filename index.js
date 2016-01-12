@@ -15,9 +15,9 @@ function InsertDiff(index, values) {
 InsertDiff.prototype.type = 'insert';
 InsertDiff.prototype.toJSON = function() {
   return {
-    type: this.type
-  , index: this.index
-  , values: this.values
+    type: this.type,
+    index: this.index,
+    values: this.values
   };
 };
 
@@ -28,9 +28,9 @@ function RemoveDiff(index, howMany) {
 RemoveDiff.prototype.type = 'remove';
 RemoveDiff.prototype.toJSON = function() {
   return {
-    type: this.type
-  , index: this.index
-  , howMany: this.howMany
+    type: this.type,
+    index: this.index,
+    howMany: this.howMany
   };
 };
 
@@ -42,10 +42,10 @@ function MoveDiff(from, to, howMany) {
 MoveDiff.prototype.type = 'move';
 MoveDiff.prototype.toJSON = function() {
   return {
-    type: this.type
-  , from: this.from
-  , to: this.to
-  , howMany: this.howMany
+    type: this.type,
+    from: this.from,
+    to: this.to,
+    howMany: this.howMany
   };
 };
 
@@ -60,7 +60,7 @@ function arrayDiff(before, after, equalFn) {
   // as moves. Many of these "moves" may end up being discarded in the last
   // pass if they are from an index to the same index, but we don't know this
   // up front, since we haven't yet offset the indices.
-  // 
+  //
   // Also keep a map of all the indices accounted for in the before and after
   // arrays. These maps are used next to create insert and remove diffs.
   var beforeLength = before.length;
@@ -110,7 +110,7 @@ function arrayDiff(before, after, equalFn) {
   // Create an insert for all of the items in the after array that were
   // not marked as being matched in the before array as well
   var inserts = [];
-  for (afterIndex = 0; afterIndex < afterLength;) {
+  for (var afterIndex = 0; afterIndex < afterLength;) {
     if (afterMarked[afterIndex]) {
       afterIndex++;
       continue;
