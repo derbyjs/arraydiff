@@ -1,5 +1,7 @@
 # arraydiff
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/derbyjs/arraydiff.svg)](https://greenkeeper.io/)
+
 Diff two arrays, finding inserts, removes, and moves.
 
 [![Build Status](https://travis-ci.org/derbyjs/arraydiff.svg?branch=master)](https://travis-ci.org/derbyjs/arraydiff)
